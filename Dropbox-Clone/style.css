@@ -1,0 +1,59 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+.grid-even-columns {
+  /* display: grid; */
+  /* Using percentages that adds up to 100%  and using gap, will cause the content to overflow. Threfore we use fr*/
+  /* grid-template-columns: 50% 1fr 1fr; */
+  /* gap: 1rem; */
+}
+
+
+.grid-even-columns.areas {
+  display: grid;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four";
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  /* .grid-even-columns {
+    grid-template-columns: repeat(2, 1fr);
+  } */
+  .grid-even-columns.areas {
+    grid-template-areas: 
+      "one two"
+      "three four";
+  }
+}
+
+@media (min-width: 992px) {
+  /* .grid-even-columns {
+    grid-template-columns: repeat(4, 1fr);
+  } */
+  .grid-even-columns.areas{
+    grid-template-areas: 
+      "one two three four";
+  }
+}
